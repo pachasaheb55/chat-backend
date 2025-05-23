@@ -1,0 +1,308 @@
+{
+  "info": {
+    "name": "Chat API Test Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/api/v1/auth/login",
+          "host": [
+            "localhost:8000"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "auth",
+            "login"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"testuser\",\n  \"password\": \"testpass\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Create Chat",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/api/v1/chats/create-chat",
+          "host": [
+            "localhost:8000"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "chats",
+            "create-chat"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Product Support Chat\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Add Message - Refund Policy",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/api/v1/messages/add-message",
+          "host": [
+            "localhost:8000"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "messages",
+            "add-message"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"chat_id\": \"chat123\",\n  \"question\": \"What is the refund policy?\",\n  \"response\": \"Refunds are available within 30 days of purchase.\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Add Message - How to Refund",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/api/v1/messages/add-message",
+          "host": [
+            "localhost:8000"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "messages",
+            "add-message"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"chat_id\": \"chat123\",\n  \"question\": \"How do I initiate a refund?\",\n  \"response\": \"You can initiate a refund from your account order history.\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Create Branch - International Refunds",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/api/v1/branches/create-branch",
+          "host": [
+            "localhost:8000"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "branches",
+            "create-branch"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"parent_chat_id\": \"chat123\",\n  \"message_index\": 0,\n  \"name\": \"International Refunds\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Add Message - International Refunds",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/api/v1/messages/add-message",
+          "host": [
+            "localhost:8000"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "messages",
+            "add-message"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"chat_id\": \"branch_chat_1\",\n  \"question\": \"Does the refund policy apply to international orders?\",\n  \"response\": \"International refunds take up to 45 days to process.\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Add Message - Damaged Product",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/api/v1/messages/add-message",
+          "host": [
+            "localhost:8000"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "messages",
+            "add-message"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"chat_id\": \"chat123\",\n  \"question\": \"What if the product is damaged?\",\n  \"response\": \"Damaged products must be reported within 7 days of delivery.\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Create Branch - Refund Timeframe",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/api/v1/branches/create-branch",
+          "host": [
+            "localhost:8000"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "branches",
+            "create-branch"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"parent_chat_id\": \"chat123\",\n  \"message_index\": 2,\n  \"name\": \"Refund Timeframe\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Add Message - Extend Refund Window",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/api/v1/messages/add-message",
+          "host": [
+            "localhost:8000"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "messages",
+            "add-message"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"chat_id\": \"branch_chat_2\",\n  \"question\": \"Can I extend the refund window?\",\n  \"response\": \"In special cases, you can request an extension from support.\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Get Branches",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8000/api/v1/branches/get-branches?chat_id=chat123",
+          "host": [
+            "localhost:8000"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "branches",
+            "get-branches"
+          ],
+          "query": [
+            {
+              "key": "chat_id",
+              "value": "chat123"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Set Active Branch",
+      "request": {
+        "method": "PUT",
+        "url": {
+          "raw": "http://localhost:8000/api/v1/branches/set-active-branch?chat_id=branch_chat_1",
+          "host": [
+            "localhost:8000"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "branches",
+            "set-active-branch"
+          ],
+          "query": [
+            {
+              "key": "chat_id",
+              "value": "branch_chat_1"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
