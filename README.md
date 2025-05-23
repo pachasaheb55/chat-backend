@@ -25,4 +25,37 @@ A microservice-based chat backend built using **FastAPI** and **MongoDB**, suppo
 ---
 
 ## 📁 Project Structure
+chat-backend/
+├── app/
+│ ├── models/
+│ ├── routes/
+│ ├── schemas/
+│ ├── services/
+│ └── main.py
+├── requirements.txt
+├── README.md
+└── .env.example
+
+
+---
+
+## 🛠️ Setup Instructions
+
+```bash
+# Clone the repo
+git clone https://github.com/<your-username>/chat-backend.git
+cd chat-backend
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Copy .env
+cp .env.example .env
+
+# Start the server
+uvicorn app.main:app --reload
 
